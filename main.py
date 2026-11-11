@@ -167,17 +167,22 @@ async def edit_form(
 ):
     return templates.TemplateResponse(request=request, name="try_update.html", context={"order": item_id})
 
-@app.get("/edit/{item_id}", response_class=HTMLResponse)
+@app.post("/edit/{item_id}", response_class=HTMLResponse)
 async def edit_form(
     request: Request,
     item_id: int,
     amount: int = Form(...),
 ):
     try:
-        response = requests.get(f"{SERVER_URL}/update?id={item_id}&amount={amount}")
+        print("umbulichkla delau")
+        response = requests.get(f"{SERVER_URL}/update?id={item_id}&quantity={amount}")
         if response.status_code == 200:
-            return admin_panel(request)
+            print("umbulichkla")
+            return RedirectResponse(url=f"/all/36863686", status_code=303)
+        else:
+            return f"error: {response.status_code}/{response.text}"
     except requests.exceptions.RequestException as e:
+        print(e)
         return
 
 def get_not_all(name, request):
