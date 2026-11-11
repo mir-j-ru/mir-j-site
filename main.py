@@ -6,7 +6,7 @@ import requests
 from datetime import datetime
 from fastapi.responses import JSONResponse
 
-SERVER_URL = "http://194.113.35.248"
+SERVER_URL = "http://194.113.35.248/api"
 
 app = FastAPI()
 
