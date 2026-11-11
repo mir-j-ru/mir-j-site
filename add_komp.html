@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>добавить комплектацию</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="services">
+            <a href="/all/36863686" class="link"><button>вся комплектация</button></a>
+            <a href="/gorizont/36863686" class="link"><button>горизонтальные</button></a>
+            <a href="/vertical/36863686" class="link"><button>веритикальные</button></a>
+            <a href="/mini/36863686" class="link"><button>mini</button></a>
+            <a href="/uni/36863686" class="link"><button>uni</button></a>
+            <a href="/benthin/36863686" class="link"><button>benthin</button></a>
+            <a href="/mg/36863686" class="link"><button>mg</button></a>
+            <a href="/search/36863686" class="link"><button>поиск</button></a>
+            <a href="/add_komp/36863686" class="link"><button>добавить</button></a>
+            <a href="/vichet/36863686" class="link"><button>вычет</button></a>
+        </div>
+        <h1>введите данные:</h1>
+        <!-- Форма -->
+        <form action="/passord" method="post">
+            <input type="text" name="name" placeholder="название" required>
+            <input type="text" name="category" placeholder="категория" required>
+            <input type="text" name="number" placeholder="номер" required>
+            <input type="text" name="quantity" placeholder="количество" required>
+            <button type="submit">создать</button>
+        </form>
+    </div>
+</body>
+</html>

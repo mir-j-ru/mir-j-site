@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>вычет</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="services">
+            <a href="/all/36863686" class="link"><button>вся комплектация</button></a>
+            <a href="/gorizont/36863686" class="link"><button>горизонтальные</button></a>
+            <a href="/vertical/36863686" class="link"><button>веритикальные</button></a>
+            <a href="/mini/36863686" class="link"><button>mini</button></a>
+            <a href="/uni/36863686" class="link"><button>uni</button></a>
+            <a href="/benthin/36863686" class="link"><button>benthin</button></a>
+            <a href="/mg/36863686" class="link"><button>mg</button></a>
+            <a href="/search/36863686" class="link"><button>поиск</button></a>
+            <a href="/add_komp/36863686" class="link"><button>добавить</button></a>
+            <a href="/vichet/36863686" class="link"><button>вычет</button></a>
+        </div>
+        <h1>вычет жалюзи</h1>:</h3>
+        <form action="/vichet_func" method="post">
+        <!-- ... ваши остальные поля (имя, телефон и т.д.) ... -->
+
+        <label for="service">Выберите услугу:</label>
+            <select name="service" id="service" required>
+                <option value="" disabled selected>-- Выберите вариант --</option>
+                <option value="vertical">ВЕРТИКАЛЬНЫЕ ЖАЛЮЗИ</option>
+                <option value="gorizont">ГОРИЗОНТАЛЬНЫЕ ЖАЛЮЗИ</option>
+                <option value="UNI">UNI</option>
+                <option value="gorizont">BENTHIN</option>
+                <option value="UNI">MINI L</option>
+                <option value="UNI">MINI R</option>
+            </select>
+            <input type="text" name="weight" placeholder="длинна" required>
+            <input type="text" name="height" placeholder="высота" required>
+            <button type="submit">вычесть</button>
+        </form>
+    </div>
+</body>
+</html>

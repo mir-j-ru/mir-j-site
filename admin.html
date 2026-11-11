@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>склад мир жалюзи</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="services">
+            <a href="/all/36863686" class="link"><button>вся комплектация</button></a>
+            <a href="/gorizont/36863686" class="link"><button>горизонтальные</button></a>
+            <a href="/vertical/36863686" class="link"><button>веритикальные</button></a>
+            <a href="/mini/36863686" class="link"><button>mini</button></a>
+            <a href="/uni/36863686" class="link"><button>uni</button></a>
+            <a href="/benthin/36863686" class="link"><button>benthin</button></a>
+            <a href="/mg/36863686" class="link"><button>mg</button></a>
+            <a href="/search/36863686" class="link"><button>поиск</button></a>
+            <a href="/add_komp/36863686" class="link"><button>добавить</button></a>
+            <a href="/vichet/36863686" class="link"><button>вычет</button></a>
+        </div>
+        <h1>{{ name }}</h1>
+
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>название</th>
+                    <th>категорния</th>
+                    <th>номер</th>
+                    <th>количество</th>
+                    <th>обновить</th>
+                    <th>удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Начинаем цикл по списку services -->
+                {% for r in result %}
+                <tr>
+                    <!-- Вставляем значения из словаря -->
+                    <td>{{ r.ID }}</td>
+                    <td>{{ r.Name }}</td>
+                    <td>{{ r.Category }}</td>
+                    <td>{{ r.Number }}</td>
+                    <td>{{ r.Quantity }}</td>
+                    <td><a href="/try_up/{{ r.ID }}" class="button"><button class="button-v">обновить</button></a></td>
+                    <td><a href="/delete_ord/{{ r.ID }}" class="button-del"><button class="button-del">удалить</button></a></td>
+                </tr>
+                {% endfor %}
+                <!-- Конец цикла -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
