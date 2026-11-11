@@ -24,10 +24,6 @@ async def vichet_html(request: Request, password: str):
     if password == "36863686":
         return templates.TemplateResponse(request=request, name="vichet.html")
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    return templates.TemplateResponse(request=request, name="index.html")
-
 @app.get("/add_komp/{password}", response_class=HTMLResponse)
 async def add_komp(request: Request, password: str):
     if password == "36863686":
@@ -72,7 +68,7 @@ async def searching(request: Request, password: str, q: str = Form(default="")):
 @app.post("/passord", response_class=HTMLResponse)
 async def password(request: Request, password: str = Form(...)):
     if password == "36863686":
-        return admin_panel(request)
+        return RedirectResponse(url=f"/all/36863686", status_code=303)
 
 @app.get("/all/{password}", response_class=HTMLResponse)
 async def all(request: Request, password: str):
