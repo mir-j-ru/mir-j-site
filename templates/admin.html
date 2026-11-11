@@ -36,7 +36,7 @@
             <tbody>
                 <!-- Начинаем цикл по списку services -->
                 {% for r in result %}
-                <tr class="{% if r.Quantity < 10 %}unpaid{% else %}paid{% endif %}">
+                <tr class="{% if r.Quantity | int lt 10 %}unpaid{% else %}paid{% endif %}">
                     <!-- Вставляем значения из словаря -->
                     <td>{{ r.ID }}</td>
                     <td>{{ r.Name }}</td>
