@@ -41,15 +41,23 @@
             <tbody>
                 <!-- Начинаем цикл по списку services -->
                 {% for r in result %}
-                <tr>
+                <tr class="{% if r.Quantity < 10 %}unpaid{% else %}paid{% endif %}">
                     <!-- Вставляем значения из словаря -->
                     <td>{{ r.ID }}</td>
                     <td>{{ r.Name }}</td>
                     <td>{{ r.Category }}</td>
                     <td>{{ r.Number }}</td>
-                    <td>{{ r.Quantity }}</td>
-                    <td><a href="/try_up/{{ r.ID }}" class="btn-edit"><button>обновить</button></a></td>
-                    <td><a href="/delete_ord/{{ r.ID }}" class="btn-edit"><button>удалить</button></a></td>
+                    <td>
+                        {% if r.Quantity < 10 %}
+                            <!-- Если сделано, показываем текст, а не кнопку -->
+                            <span style="color: red; font-weight: bold;">{{ r.Quantity }}</span>
+                        {% else %}
+                            <!-- Если не сделано, показываем кнопку -->
+                            <span style="color: green; font-weight: bold;">{{ r.Quantity }}</span>
+                        {% endif %}
+                    </td>
+                    <td><a href="/try_up/{{ r.ID }}" class="button"><button class="button-v">обновить</button></a></td>
+                    <td><a href="/delete_ord/{{ r.ID }}" class="button-del"><button class="button-del">удалить</button></a></td>
                 </tr>
                 {% endfor %}
                 <!-- Конец цикла -->
