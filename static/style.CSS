@@ -10,6 +10,23 @@ body {
     box-sizing: border-box;
 }
 
+/* Строка для неоплаченных заказов */
+.unpaid {
+    background-color: #ffe6e6; /* Светло-красный фон */
+    color: #cc0000;            /* Темно-красный текст */
+}
+
+/* Строка для оплаченных заказов */
+.paid {
+    background-color: #e6ffe6; /* Светло-зеленый фон */
+    color: #006600;            /* Темно-зеленый текст */
+}
+
+/* Чтобы при наведении цвет не пропадал (если у вас есть hover) */
+.unpaid:hover {
+    background-color: #ffcccc;
+}
+
 .service {
     align-items: stretch;
     margin-bottom: 10px
